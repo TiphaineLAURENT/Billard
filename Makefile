@@ -17,7 +17,7 @@ LDFLAGS		+=	-lGL
 LDFLAGS		+=	-lsfml-audio -lsfml-graphics -lsfml-network -lsfml-system -lsfml-window
 
 CLASS_DIR	=	class
-CLASS_SRC	=	\
+CLASS_SRC	=	Game.cpp					\
 
 SRC_DIR		=	src
 SRC_FILES	=	$(addprefix $(CLASS_DIR)/, $(CLASS_SRC))	\
