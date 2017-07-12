@@ -5,14 +5,19 @@
 // Login   <tiphaine.laurent@epitech.eu>
 // 
 // Started on  Tue Jul 11 17:45:07 2017 Tiphaine
-// Last update Tue Jul 11 23:24:12 2017 Tiphaine
+// Last update Wed Jul 12 19:26:49 2017 Tiphaine
 //
 
 #ifndef GAME_HPP
 # define GAME_HPP
 
+# include <iostream>
+
 # include <SFML/Audio.hpp>
 # include <SFML/Graphics.hpp>
+# include <vector>
+
+# include "Ball.hpp"
 
 class			Game
 {
@@ -25,6 +30,7 @@ public:
   bool			loop(bool);
 
 private:
+  void			createBalls(void);
   bool			draw(void);
   void			checkEvent(void);
 
@@ -33,6 +39,10 @@ private:
   sf::Event		*_event;
   sf::Texture		*_tableTexture;
   sf::Sprite		*_tableSprite;
+  std::vector<Ball*>	_yellowBalls;
+  std::vector<Ball*>	_redBalls;
+  Ball			*_white;
+  Ball			*_black;
   bool			_isPlaying;
 };
 

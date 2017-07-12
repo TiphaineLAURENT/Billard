@@ -9,7 +9,7 @@ CXXFLAGS	+=	-Wswitch-default -Wswitch-enum
 CXXFLAGS	+=	-Wuninitialized -Winit-self
 CXXFLAGS	+=	-fstack-protector-strong
 CXXFLAGS	+=	-pedantic
-CXXFLAGS	+=	-march=native
+CXXFLAGS	+=	-march=native ##-std=c++11
 CPPFLAGS	=	-I include
 
 LDFLAGS		=	-lm
@@ -18,6 +18,7 @@ LDFLAGS		+=	-lsfml-audio -lsfml-graphics -lsfml-network -lsfml-system -lsfml-win
 
 CLASS_DIR	=	class
 CLASS_SRC	=	Game.cpp					\
+			Ball.cpp					\
 
 SRC_DIR		=	src
 SRC_FILES	=	$(addprefix $(CLASS_DIR)/, $(CLASS_SRC))	\

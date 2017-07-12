@@ -5,37 +5,35 @@
 // Login   <tiphaine.laurent@epitech.eu>
 // 
 // Started on  Wed Jul 12 00:01:33 2017 Tiphaine
-// Last update Wed Jul 12 11:07:04 2017 Tiphaine
+// Last update Wed Jul 12 19:29:36 2017 Tiphaine
 //
 
 #ifndef BALL_HPP
 # define BALL_HPP
 
-typedef enum		e_type
-  {
-    WHITE,
-    BLACK,
-    STRIPE,
-    FULL
-  }			t_type;
-
 class			Ball
 {
 public:
-  Ball();
+  Ball(const char *);
   ~Ball();
 
 public:
+  sf::Vector2f		&pos(void) const;
+  bool			setPos(const sf::Vector2f&);
+  bool			setPos(float, float);
+  sf::Vector2<double>	&speed(void) const;
+  bool			setSpeed(const sf::Vector2<double>&);
+  bool			setSpeed(double, double);
+  sf::Sprite		&sprite(void);
 
 private:
 
 private:
-  double		_speed;
-  double		_velocity;
-  int			_weight;
-  sf::Vector2f		pos;
-  sf::Sprite		_sprite;
-  t_type		_type;
+  sf::Texture		*_texture;
+  sf::Sprite		*_sprite;
+  sf::Vector2<double>	*_speed;
+  double		_acceleration;
+  std::string		_color;
 };
 
 #endif /* !BALL_HPP */

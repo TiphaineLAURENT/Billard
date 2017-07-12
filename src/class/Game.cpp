@@ -5,12 +5,21 @@
 // Login   <tiphaine.laurent@epitech.eu>
 // 
 // Started on  Tue Jul 11 17:44:44 2017 Tiphaine
-// Last update Wed Jul 12 14:00:34 2017 Tiphaine
+// Last update Wed Jul 12 19:47:53 2017 Tiphaine
 //
 
 #include "Game.hpp"
 #include "const.hpp"
-#include <iostream>
+
+void		Game::createBalls(void)
+{
+  for (int i = 0; i < 8; i++)
+    _redBalls.push_back(new Ball(RED));
+  for (int i = 0; i < 8; i++)
+    _yellowBalls.push_back(new Ball(YELLOW));
+  _white = new Ball(WHITE);
+  _white = new Ball(BLACK);
+}
 
 Game::Game() : _isPlaying(false)
 {
@@ -21,6 +30,7 @@ Game::Game() : _isPlaying(false)
   _tableSprite = new sf::Sprite(*_tableTexture);
   _tableSprite->setOrigin(T_ORIGIN_X, T_ORIGIN_Y);
   _tableSprite->setPosition(T_POS_DEFAULT);
+  createBalls();
 }
 
 Game::~Game()
@@ -29,6 +39,12 @@ Game::~Game()
   delete _event;
   delete _tableTexture;
   delete _tableSprite;
+  for (unsigned int i = 0; i < _yellowBalls.size(); i++)
+    delete _yellowBalls[i];
+  for (unsigned int i = 0; i < _redBalls.size(); i++)
+    delete _redBalls[i];
+  delete _white;
+  delete _black;
 }
 
 bool		Game::loop(bool play)
@@ -47,29 +63,19 @@ bool		Game::loop(bool play)
 
 bool		Game::draw(void)
 {
-  static float x_speed(T_SPEED_X);
-  static float y_speed(T_SPEED_Y);
-  float pos_x(_tableSprite->getPosition().x);
-  float pos_y(_tableSprite->getPosition().y);
-  float acceleration(ACCELERATION);
-
   _window->clear(W_CLEAR);
-  if (pos_x < 10.0 || pos_x > getFULL_HD('x'))
-    x_speed *= (float)-1;
-  if (pos_y < 10.0 || pos_y > getFULL_HD('y'))
-    y_speed *= (float)-1;
-  std::cout << x_speed << std::endl << y_speed << std::endl;
-  _tableSprite->setPosition(pos_x + x_speed, pos_y + y_speed);
   _window->draw(*_tableSprite);
+  for (unsigned int i = 0; i < _yellowBalls.size(); i++)
+    {
+      _yellowBalls[i]->setPos((float)i * 20 + 700, 500);
+      _window->draw(_yellowBalls[i]->sprite());
+    }
+  for (unsigned int i = 0; i < _redBalls.size(); i++)
+    {
+      _redBalls[i]->setPos((float)i * 20 + 700, 600);
+      _window->draw(_redBalls[i]->sprite());
+    }
   _window->display();
-  if (x_speed < (float)0.001 && x_speed > (float)-0.001)
-    x_speed = 0;
-  else
-    x_speed *= acceleration;
-  if (y_speed < (float)0.001 && y_speed > (float)-0.001)
-    y_speed = 0;
-  else
-    y_speed *= acceleration;
   return true;
 }
 
