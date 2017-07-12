@@ -5,7 +5,7 @@
 // Login   <tiphaine.laurent@epitech.eu>
 // 
 // Started on  Tue Jul 11 17:45:07 2017 Tiphaine
-// Last update Tue Jul 11 18:14:33 2017 Tiphaine
+// Last update Tue Jul 11 23:24:12 2017 Tiphaine
 //
 
 #ifndef GAME_HPP
@@ -20,17 +20,20 @@ public:
   Game();
   ~Game();
 
-  //public:
+public:
   //bool			config();
-  //bool			loop(bool);
+  bool			loop(bool);
 
-  //private:
-  //bool			draw(bool);
+private:
+  bool			draw(void);
+  void			checkEvent(void);
 
-  //private:
+private:
   sf::RenderWindow	*_window;
-  sf::VideoMode		*_videoMode;
-  //sf::Event		*_event;
+  sf::Event		*_event;
+  sf::Texture		*_tableTexture;
+  sf::Sprite		*_tableSprite;
+  bool			_isPlaying;
 };
 
 #endif /* !GAME_HPP */
