@@ -5,10 +5,9 @@
 // Login   <tiphaine.laurent@epitech.eu>
 // 
 // Started on  Wed Jul 12 15:15:14 2017 Tiphaine
-// Last update Thu Jul 13 13:19:39 2017 Tiphaine
+// Last update Thu Jul 13 14:44:00 2017 Tiphaine
 //
 
-#include "Game.hpp"
 #include "const.hpp"
 #include "Ball.hpp"
 

@@ -5,7 +5,7 @@
 // Login   <tiphaine.laurent@epitech.eu>
 // 
 // Started on  Tue Jul 11 17:44:44 2017 Tiphaine
-// Last update Thu Jul 13 13:50:44 2017 Tiphaine
+// Last update Thu Jul 13 14:45:04 2017 Tiphaine
 //
 
 #include "Game.hpp"
@@ -13,10 +13,10 @@
 
 void		Game::createBalls()
 {
-  /*for (int i = 0; i < 8; i++)
-    _redBalls.push_back(new Ball(RED));
-    for (int i = 0; i < 8; i++)
-    _yellowBalls.push_back(new Ball(YELLOW));*/
+  for (int i = 0; i < 8; i++)
+    _redBalls.push_back(new RedBall);
+  for (int i = 0; i < 8; i++)
+    _yellowBalls.push_back(new YellowBall);
   _blackBall = new BlackBall;
   _whiteBall = new WhiteBall;
 }
@@ -39,10 +39,10 @@ Game::~Game()
   delete _event;
   delete _tableTexture;
   delete _tableSprite;
-  /*for (unsigned int i = 0; i < _yellowBalls.size(); i++)
+  for (unsigned int i = 0; i < _yellowBalls.size(); i++)
+    delete _redBalls[i];
+  for (unsigned int i = 0; i < _redBalls.size(); i++)
     delete _yellowBalls[i];
-    for (unsigned int i = 0; i < _redBalls.size(); i++)
-    delete _redBalls[i];*/
   delete _blackBall;
   delete _whiteBall;
 }
@@ -65,16 +65,16 @@ bool		Game::draw(void)
 {
   _window->clear(W_CLEAR);
   _window->draw(*_tableSprite);
-  /*for (unsigned int i = 0; i < _yellowBalls.size(); i++)
+  for (unsigned int i = 0; i < _redBalls.size(); i++)
     {
-    _yellowBalls[i]->setPos((float)i * 20 + 700, 500);
-    _window->draw(_yellowBalls[i]->sprite());
+      _redBalls[i]->setPos((float)i * 25 + 700, 600);
+      _window->draw(_redBalls[i]->sprite());
     }
-    for (unsigned int i = 0; i < _redBalls.size(); i++)
+  for (unsigned int i = 0; i < _yellowBalls.size(); i++)
     {
-    _redBalls[i]->setPos((float)i * 20 + 700, 600);
-    _window->draw(_redBalls[i]->sprite());
-    }*/
+      _yellowBalls[i]->setPos((float)i * 25 + 700, 500);
+      _window->draw(_yellowBalls[i]->sprite());
+    }
   _window->draw(_blackBall->sprite());
   _window->draw(_whiteBall->sprite());
   _window->display();

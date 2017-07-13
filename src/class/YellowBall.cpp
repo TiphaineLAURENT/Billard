@@ -1,20 +1,22 @@
 //
-// BlackBall.cpp for BlackBall in /home/tiphaine/Billard/src
+// YellowBall.cpp for YellowBall in /home/tiphaine/Billard/src
 // 
 // Made by Tiphaine
 // Login   <tiphaine.laurent@epitech.eu>
 // 
-// Started on  Thu Jul 13 13:32:15 2017 Tiphaine
-// Last update Thu Jul 13 14:37:25 2017 Tiphaine
+// Started on  Thu Jul 13 14:19:29 2017 Tiphaine
+// Last update Thu Jul 13 14:44:43 2017 Tiphaine
 //
 
 #include "const.hpp"
-#include "BlackBall.hpp"
+#include "YellowBall.hpp"
+#include <iostream>
 
-const std::string	BlackBall::_color = BLACK;
+const std::string	YellowBall::_color = YELLOW;
+int			YellowBall::_totalBall = 0;
 
-BlackBall::BlackBall()
-  : Ball()
+YellowBall::YellowBall()
+  : Ball(), _id(_totalBall++)
 {
   _texture = new sf::Texture;
   if (!_texture->loadFromFile(B_PATH(_color)))
@@ -23,16 +25,17 @@ BlackBall::BlackBall()
   _sprite->setOrigin(B_ORIGIN);
   _sprite->setScale(B_SCALE);
   reset();
+  std::cout << _id << "/" <<  _totalBall << std::endl;
 }
 
-BlackBall::~BlackBall()
+YellowBall::~YellowBall()
 {
   //  ~Ball();
   delete _texture;
   delete _sprite;
 }
 
-bool			BlackBall::reset()
+bool			YellowBall::reset()
 {
   setPos(BB_DEFAULT_POS_X, BB_DEFAULT_POS_Y);
   setSpeed(SPEED_MIN, SPEED_MIN);

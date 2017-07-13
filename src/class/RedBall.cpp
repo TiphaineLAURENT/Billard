@@ -1,20 +1,21 @@
 //
-// BlackBall.cpp for BlackBall in /home/tiphaine/Billard/src
+// RedBall.cpp for RedBall in /home/tiphaine/Billard/src
 // 
 // Made by Tiphaine
 // Login   <tiphaine.laurent@epitech.eu>
 // 
-// Started on  Thu Jul 13 13:32:15 2017 Tiphaine
-// Last update Thu Jul 13 14:37:25 2017 Tiphaine
+// Started on  Thu Jul 13 14:19:21 2017 Tiphaine
+// Last update Thu Jul 13 14:31:42 2017 Tiphaine
 //
 
 #include "const.hpp"
-#include "BlackBall.hpp"
+#include "RedBall.hpp"
 
-const std::string	BlackBall::_color = BLACK;
+const std::string	RedBall::_color = RED;
+int			RedBall::_totalBall = 0;
 
-BlackBall::BlackBall()
-  : Ball()
+RedBall::RedBall()
+  : Ball(), _id(_totalBall++)
 {
   _texture = new sf::Texture;
   if (!_texture->loadFromFile(B_PATH(_color)))
@@ -25,14 +26,14 @@ BlackBall::BlackBall()
   reset();
 }
 
-BlackBall::~BlackBall()
+RedBall::~RedBall()
 {
   //  ~Ball();
   delete _texture;
   delete _sprite;
 }
 
-bool			BlackBall::reset()
+bool			RedBall::reset()
 {
   setPos(BB_DEFAULT_POS_X, BB_DEFAULT_POS_Y);
   setSpeed(SPEED_MIN, SPEED_MIN);

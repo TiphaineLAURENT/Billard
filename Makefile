@@ -21,6 +21,8 @@ CLASS_SRC	=	Game.cpp					\
 			Ball.cpp					\
 			WhiteBall.cpp					\
 			BlackBall.cpp					\
+			RedBall.cpp					\
+			YellowBall.cpp					\
 
 SRC_DIR		=	src
 SRC_FILES	=	$(addprefix $(CLASS_DIR)/, $(CLASS_SRC))	\
