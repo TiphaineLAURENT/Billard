@@ -5,7 +5,7 @@
 // Login   <tiphaine.laurent@epitech.eu>
 // 
 // Started on  Thu Jul 13 10:40:41 2017 Tiphaine
-// Last update Thu Jul 13 14:11:42 2017 Tiphaine
+// Last update Thu Jul 13 17:22:34 2017 Tiphaine
 //
 
 #ifndef WHITEBALL_HPP_
