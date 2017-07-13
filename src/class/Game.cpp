@@ -5,17 +5,18 @@
 // Login   <tiphaine.laurent@epitech.eu>
 // 
 // Started on  Tue Jul 11 17:44:44 2017 Tiphaine
-// Last update Thu Jul 13 16:28:09 2017 Tiphaine
+// Last update Thu Jul 13 18:13:49 2017 Tiphaine
 //
 
 #include "Game.hpp"
 #include "const.hpp"
+#include <iostream>
 
 void		Game::createBalls()
 {
-  for (int i = 0; i < 8; i++)
+  for (int i = 0; i < NB_RED; i++)
     _redBalls.push_back(new RedBall);
-  for (int i = 0; i < 8; i++)
+  for (int i = 0; i < NB_YELLOW; i++)
     _yellowBalls.push_back(new YellowBall);
   _blackBall = new BlackBall;
   _whiteBall = new WhiteBall;
@@ -30,6 +31,7 @@ Game::Game() : _isPlaying(false)
   _tableSprite = new sf::Sprite(*_tableTexture);
   _tableSprite->setOrigin(T_ORIGIN_X, T_ORIGIN_Y);
   _tableSprite->setPosition(T_POS_DEFAULT);
+  _queue = new Queue;
   createBalls();
 }
 
@@ -71,6 +73,7 @@ bool		Game::draw(void)
     _window->draw(_yellowBalls[i]->sprite());
   _window->draw(_blackBall->sprite());
   _window->draw(_whiteBall->sprite());
+  _window->draw(_queue->sprite());
   _window->display();
   return true;
 }
@@ -87,5 +90,7 @@ void		Game::checkEvent(void)
 	      break ;
 	    }
 	}
+      else if (_event->type == sf::Event::MouseMoved)
+	_queue->setPos(_event->mouseMove);
     }
 }

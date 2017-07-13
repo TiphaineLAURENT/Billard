@@ -5,7 +5,7 @@
 // Login   <tiphaine.laurent@epitech.eu>
 // 
 // Started on  Tue Jul 11 17:45:07 2017 Tiphaine
-// Last update Thu Jul 13 14:36:40 2017 Tiphaine
+// Last update Thu Jul 13 17:57:38 2017 Tiphaine
 //
 
 #ifndef GAME_HPP
@@ -22,6 +22,7 @@
 # include "BlackBall.hpp"
 # include "RedBall.hpp"
 # include "YellowBall.hpp"
+# include "Queue.hpp"
 
 class			Game
 {
@@ -47,6 +48,7 @@ private:
   std::vector<Ball*>	_redBalls;
   WhiteBall		*_whiteBall;
   BlackBall		*_blackBall;
+  Queue			*_queue;
   bool			_isPlaying;
 };
 

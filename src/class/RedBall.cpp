@@ -5,12 +5,11 @@
 // Login   <tiphaine.laurent@epitech.eu>
 // 
 // Started on  Thu Jul 13 14:19:21 2017 Tiphaine
-// Last update Thu Jul 13 17:22:50 2017 Tiphaine
+// Last update Thu Jul 13 17:29:44 2017 Tiphaine
 //
 
 #include "const.hpp"
 #include "RedBall.hpp"
-#include <iostream>
 
 const std::string	RedBall::_color = RED;
 int			RedBall::_totalBall = 0;

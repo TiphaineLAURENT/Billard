@@ -5,7 +5,7 @@
 // Login   <tiphaine.laurent@epitech.eu>
 // 
 // Started on  Tue Jul 11 18:00:11 2017 Tiphaine
-// Last update Thu Jul 13 17:15:51 2017 Tiphaine
+// Last update Thu Jul 13 18:23:00 2017 Tiphaine
 //
 
 #ifndef CONST_HPP
@@ -72,6 +72,7 @@
 
 /* RED */
 # define RED			"red"
+# define NB_RED			7
 # define REDPOS_1		T_OFFSET_X(241), T_OFFSET_Y(316)
 # define REDPOS_2		T_OFFSET_X(241), T_OFFSET_Y(337)
 # define REDPOS_3		T_OFFSET_X(241), T_OFFSET_Y(376)
@@ -84,6 +85,7 @@
 
 /* YELLOW */
 # define YELLOW			"yellow"
+# define NB_YELLOW		7
 # define YELLOWPOS_1		T_OFFSET_X(241), T_OFFSET_Y(297)
 # define YELLOWPOS_2		T_OFFSET_X(241), T_OFFSET_Y(357)
 # define YELLOWPOS_3		T_OFFSET_X(260), T_OFFSET_Y(328)
@@ -91,4 +93,9 @@
 # define YELLOWPOS_5		T_OFFSET_X(279), T_OFFSET_Y(317)
 # define YELLOWPOS_6		T_OFFSET_X(298), T_OFFSET_Y(347)
 # define YELLOWPOS_7		T_OFFSET_X(316), T_OFFSET_Y(337)
+
+/* QUEUE */
+# define Q_PATH			IMAGE"queue.png"
+# define DEFAULT_ANGLE		180
+
 #endif /* !CONST_HPP */
