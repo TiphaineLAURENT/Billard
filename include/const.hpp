@@ -5,7 +5,7 @@
 // Login   <tiphaine.laurent@epitech.eu>
 // 
 // Started on  Tue Jul 11 18:00:11 2017 Tiphaine
-// Last update Thu Jul 13 13:48:09 2017 Tiphaine
+// Last update Thu Jul 13 17:15:51 2017 Tiphaine
 //
 
 #ifndef CONST_HPP
@@ -42,10 +42,10 @@
 # define T_POS_DEFAULT		getFULL_HD('x') / 2, getFULL_HD('y') / 2
 # define T_SPEED_X		1
 # define T_SPEED_Y		10
+# define T_OFFSET_X(x)		(float)(x + 320)
+# define T_OFFSET_Y(y)		(float)(y + 200)
 
 /* BALL */
-# define RED			"red"
-# define YELLOW			"yellow"
 # define B_PATH(color)		(IMAGE + color + ".png")
 # define B_HEIGHT		17
 # define B_WIDTH		17
@@ -62,11 +62,33 @@
 
 /* WHITE */
 # define WHITE			"white"
-# define BW_DEFAULT_POS_X	994 + 320
-# define BW_DEFAULT_POS_Y	337 + 200
+# define BW_DEFAULT_POS_X	T_OFFSET_X(994)
+# define BW_DEFAULT_POS_Y	T_OFFSET_Y(337)
 
 /* BLACK */
 # define BLACK			"black"
-# define BB_DEFAULT_POS_X	281 + 320
-# define BB_DEFAULT_POS_Y	337 + 200
+# define BB_DEFAULT_POS_X	T_OFFSET_X(279)
+# define BB_DEFAULT_POS_Y	T_OFFSET_Y(337)
+
+/* RED */
+# define RED			"red"
+# define REDPOS_1		T_OFFSET_X(241), T_OFFSET_Y(316)
+# define REDPOS_2		T_OFFSET_X(241), T_OFFSET_Y(337)
+# define REDPOS_3		T_OFFSET_X(241), T_OFFSET_Y(376)
+# define REDPOS_4		T_OFFSET_X(260), T_OFFSET_Y(308)
+# define REDPOS_5		T_OFFSET_X(260), T_OFFSET_Y(346)
+# define REDPOS_6		T_OFFSET_X(279), T_OFFSET_Y(357)
+# define REDPOS_7		T_OFFSET_X(298), T_OFFSET_Y(326)
+
+# define BOT_MID		247, 338
+
+/* YELLOW */
+# define YELLOW			"yellow"
+# define YELLOWPOS_1		T_OFFSET_X(241), T_OFFSET_Y(297)
+# define YELLOWPOS_2		T_OFFSET_X(241), T_OFFSET_Y(357)
+# define YELLOWPOS_3		T_OFFSET_X(260), T_OFFSET_Y(328)
+# define YELLOWPOS_4		T_OFFSET_X(260), T_OFFSET_Y(366)
+# define YELLOWPOS_5		T_OFFSET_X(279), T_OFFSET_Y(317)
+# define YELLOWPOS_6		T_OFFSET_X(298), T_OFFSET_Y(347)
+# define YELLOWPOS_7		T_OFFSET_X(316), T_OFFSET_Y(337)
 #endif /* !CONST_HPP */

@@ -5,7 +5,7 @@
 // Login   <tiphaine.laurent@epitech.eu>
 // 
 // Started on  Tue Jul 11 17:44:44 2017 Tiphaine
-// Last update Thu Jul 13 14:45:04 2017 Tiphaine
+// Last update Thu Jul 13 16:28:09 2017 Tiphaine
 //
 
 #include "Game.hpp"
@@ -66,15 +66,9 @@ bool		Game::draw(void)
   _window->clear(W_CLEAR);
   _window->draw(*_tableSprite);
   for (unsigned int i = 0; i < _redBalls.size(); i++)
-    {
-      _redBalls[i]->setPos((float)i * 25 + 700, 600);
-      _window->draw(_redBalls[i]->sprite());
-    }
+    _window->draw(_redBalls[i]->sprite());
   for (unsigned int i = 0; i < _yellowBalls.size(); i++)
-    {
-      _yellowBalls[i]->setPos((float)i * 25 + 700, 500);
-      _window->draw(_yellowBalls[i]->sprite());
-    }
+    _window->draw(_yellowBalls[i]->sprite());
   _window->draw(_blackBall->sprite());
   _window->draw(_whiteBall->sprite());
   _window->display();

@@ -5,11 +5,12 @@
 // Login   <tiphaine.laurent@epitech.eu>
 // 
 // Started on  Thu Jul 13 14:19:21 2017 Tiphaine
-// Last update Thu Jul 13 14:31:42 2017 Tiphaine
+// Last update Thu Jul 13 16:26:11 2017 Tiphaine
 //
 
 #include "const.hpp"
 #include "RedBall.hpp"
+#include <iostream>
 
 const std::string	RedBall::_color = RED;
 int			RedBall::_totalBall = 0;
@@ -35,7 +36,24 @@ RedBall::~RedBall()
 
 bool			RedBall::reset()
 {
-  setPos(BB_DEFAULT_POS_X, BB_DEFAULT_POS_Y);
+  switch (_id)
+    {
+    case 0 : setPos(REDPOS_1);
+      break ;
+    case 1 : setPos(REDPOS_2);
+      break ;
+    case 2 : setPos(REDPOS_3);
+      break ;
+    case 3 : setPos(REDPOS_4);
+      break ;
+    case 4 : setPos(REDPOS_5);
+      break ;
+    case 5 : setPos(REDPOS_6);
+      break ;
+    case 6 : setPos(REDPOS_7);
+      break ;
+    default : break;
+    }
   setSpeed(SPEED_MIN, SPEED_MIN);
   return true;
 }
