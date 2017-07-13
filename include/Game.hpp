@@ -5,7 +5,7 @@
 // Login   <tiphaine.laurent@epitech.eu>
 // 
 // Started on  Tue Jul 11 17:45:07 2017 Tiphaine
-// Last update Wed Jul 12 19:26:49 2017 Tiphaine
+// Last update Thu Jul 13 13:49:47 2017 Tiphaine
 //
 
 #ifndef GAME_HPP
@@ -18,6 +18,8 @@
 # include <vector>
 
 # include "Ball.hpp"
+# include "WhiteBall.hpp"
+# include "BlackBall.hpp"
 
 class			Game
 {
@@ -41,8 +43,8 @@ private:
   sf::Sprite		*_tableSprite;
   std::vector<Ball*>	_yellowBalls;
   std::vector<Ball*>	_redBalls;
-  Ball			*_white;
-  Ball			*_black;
+  WhiteBall		*_whiteBall;
+  BlackBall		*_blackBall;
   bool			_isPlaying;
 };
 

@@ -19,6 +19,8 @@ LDFLAGS		+=	-lsfml-audio -lsfml-graphics -lsfml-network -lsfml-system -lsfml-win
 CLASS_DIR	=	class
 CLASS_SRC	=	Game.cpp					\
 			Ball.cpp					\
+			WhiteBall.cpp					\
+			BlackBall.cpp					\
 
 SRC_DIR		=	src
 SRC_FILES	=	$(addprefix $(CLASS_DIR)/, $(CLASS_SRC))	\

@@ -5,17 +5,19 @@
 // Login   <tiphaine.laurent@epitech.eu>
 // 
 // Started on  Wed Jul 12 00:01:33 2017 Tiphaine
-// Last update Wed Jul 12 19:29:36 2017 Tiphaine
+// Last update Thu Jul 13 13:00:35 2017 Tiphaine
 //
 
-#ifndef BALL_HPP
-# define BALL_HPP
+#ifndef BALL_HPP_
+# define BALL_HPP_
+
+# include <SFML/Graphics.hpp>
 
 class			Ball
 {
 public:
-  Ball(const char *);
-  ~Ball();
+  Ball();
+  virtual ~Ball();
 
 public:
   sf::Vector2f		&pos(void) const;
@@ -24,16 +26,16 @@ public:
   sf::Vector2<double>	&speed(void) const;
   bool			setSpeed(const sf::Vector2<double>&);
   bool			setSpeed(double, double);
-  sf::Sprite		&sprite(void);
+  sf::Sprite		&sprite(void) const;
+  virtual bool		reset(void) = 0;
 
 private:
 
-private:
+protected:
   sf::Texture		*_texture;
   sf::Sprite		*_sprite;
   sf::Vector2<double>	*_speed;
   double		_acceleration;
-  std::string		_color;
 };
 
-#endif /* !BALL_HPP */
+#endif /* !BALL_HPP_ */

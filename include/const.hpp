@@ -5,7 +5,7 @@
 // Login   <tiphaine.laurent@epitech.eu>
 // 
 // Started on  Tue Jul 11 18:00:11 2017 Tiphaine
-// Last update Wed Jul 12 19:50:44 2017 Tiphaine
+// Last update Thu Jul 13 13:48:09 2017 Tiphaine
 //
 
 #ifndef CONST_HPP
@@ -44,10 +44,9 @@
 # define T_SPEED_Y		10
 
 /* BALL */
-# define WHITE			IMAGE"white.png"
-# define BLACK			IMAGE"black.png"
-# define RED			IMAGE"red.png"
-# define YELLOW			IMAGE"yellow.png"
+# define RED			"red"
+# define YELLOW			"yellow"
+# define B_PATH(color)		(IMAGE + color + ".png")
 # define B_HEIGHT		17
 # define B_WIDTH		17
 # define B_ORIGIN_X		9
@@ -61,4 +60,13 @@
 //# define SPEED_Y		_speed * cos(angle)
 # define ACCELERATION		0.98
 
+/* WHITE */
+# define WHITE			"white"
+# define BW_DEFAULT_POS_X	994 + 320
+# define BW_DEFAULT_POS_Y	337 + 200
+
+/* BLACK */
+# define BLACK			"black"
+# define BB_DEFAULT_POS_X	281 + 320
+# define BB_DEFAULT_POS_Y	337 + 200
 #endif /* !CONST_HPP */
