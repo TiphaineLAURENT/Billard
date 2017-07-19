@@ -5,7 +5,7 @@
 // Login   <tiphaine.laurent@epitech.eu>
 // 
 // Started on  Tue Jul 11 18:00:11 2017 Tiphaine
-// Last update Thu Jul 13 18:23:00 2017 Tiphaine
+// Last update Wed Jul 19 14:31:00 2017 Tiphaine
 //
 
 #ifndef CONST_HPP
@@ -25,6 +25,7 @@
 # define W_RESOLUTION		FULL_HD
 # define W_BPP			32
 # define W_CLEAR		sf::Color(42, 142, 42, 100)//sf::Color::Green
+# define W_FPS_MAX		62
 
 /* OBJETS */
 # define RESSOURCE		"ressource/"
@@ -64,11 +65,13 @@
 # define WHITE			"white"
 # define BW_DEFAULT_POS_X	T_OFFSET_X(994)
 # define BW_DEFAULT_POS_Y	T_OFFSET_Y(337)
+# define BW_DEFAULT_POS		BW_DEFAULT_POS_X, BW_DEFAULT_POS_Y
 
 /* BLACK */
 # define BLACK			"black"
 # define BB_DEFAULT_POS_X	T_OFFSET_X(279)
 # define BB_DEFAULT_POS_Y	T_OFFSET_Y(337)
+# define BB_DEFAULT_POS		BB_DEFAULT_POS_X, BB_DEFAULT_POS_Y
 
 /* RED */
 # define RED			"red"
@@ -96,6 +99,32 @@
 
 /* QUEUE */
 # define Q_PATH			IMAGE"queue.png"
-# define DEFAULT_ANGLE		180
+# define Q_HEIGHT		24
+# define Q_WIDTH		536
+# define Q_ORIGIN_X		0//Q_WIDTH / 2
+# define Q_ORIGIN_Y		Q_HEIGHT / 2
+# define Q_ORIGIN		Q_ORIGIN_X, Q_ORIGIN_Y
+# define Q_BACK_ORIGIN		Q_WIDTH, Q_HEIGHT / 2
+# define Q_DEFAULT_ANGLE	0//180
+# define Q_DEFAULT_POS_X	BW_DEFAULT_POS_X
+# define Q_DEFAULT_POS_Y	BW_DEFAULT_POS_Y
+# define Q_DEFAULT_POS		Q_DEFAULT_POS_X, Q_DEFAULT_POS_Y
+# define ANGLE_DELTA		1
+# define POWER_DELTA		1
+
+typedef enum			e_key
+  {
+    LEFT,
+    RIGHT,
+    UP,
+    DOWN
+  }				t_key;
+
+/* FONT */
+# define F_PATH			FONT"BebasNeue.otf"
+
+/* TEXT */
+# define T_CSIZE		15
+# define T_COLOR		sf::Color::Black
 
 #endif /* !CONST_HPP */

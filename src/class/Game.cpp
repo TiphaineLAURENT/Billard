@@ -5,11 +5,12 @@
 // Login   <tiphaine.laurent@epitech.eu>
 // 
 // Started on  Tue Jul 11 17:44:44 2017 Tiphaine
-// Last update Thu Jul 13 18:13:49 2017 Tiphaine
+// Last update Wed Jul 19 15:16:36 2017 Tiphaine
 //
 
 #include "Game.hpp"
 #include "const.hpp"
+#include "utils.hpp"
 #include <iostream>
 
 void		Game::createBalls()
@@ -25,6 +26,7 @@ void		Game::createBalls()
 Game::Game() : _isPlaying(false)
 {
   _window = new sf::RenderWindow(sf::VideoMode(W_RESOLUTION, W_BPP), W_NAME, W_STYLE);
+  _window->setFramerateLimit(W_FPS_MAX);
   _event = new sf::Event;
   _tableTexture = new sf::Texture;
   _tableTexture->loadFromFile(T_PATH);
@@ -33,6 +35,12 @@ Game::Game() : _isPlaying(false)
   _tableSprite->setPosition(T_POS_DEFAULT);
   _queue = new Queue;
   createBalls();
+  _font = new sf::Font;
+  _font->loadFromFile(F_PATH);
+  _text = new sf::Text;
+  _text->setFont(*_font);
+  _text->setCharacterSize(T_CSIZE);
+  _text->setColor(T_COLOR);
 }
 
 Game::~Game()
@@ -47,6 +55,8 @@ Game::~Game()
     delete _yellowBalls[i];
   delete _blackBall;
   delete _whiteBall;
+  delete _font;
+  delete _text;
 }
 
 bool		Game::loop(bool play)
@@ -57,7 +67,6 @@ bool		Game::loop(bool play)
     {
       checkEvent();
       draw();
-      sf::sleep(sf::milliseconds(20));
     }
   _window->close();
   return true;
@@ -74,12 +83,18 @@ bool		Game::draw(void)
   _window->draw(_blackBall->sprite());
   _window->draw(_whiteBall->sprite());
   _window->draw(_queue->sprite());
+  _text->setString(itostr(fps()));
+  //_text->setString(itostr((int)_queue->power()));
+  _window->draw(*_text);
   _window->display();
   return true;
 }
 
 void		Game::checkEvent(void)
 {
+  static bool		fireing = false;
+
+  std::cout << fireing << std::endl;
   while (_window->pollEvent(*_event))
     {
       if (_event->type == sf::Event::KeyPressed)
@@ -89,8 +104,27 @@ void		Game::checkEvent(void)
 	      _isPlaying = false;
 	      break ;
 	    }
+	  else if (_event->key.code == sf::Keyboard::Left)
+	    _queue->rotate(LEFT);
+	  else if (_event->key.code == sf::Keyboard::Right)
+	    _queue->rotate(RIGHT);
+	  else if (_event->key.code == sf::Keyboard::Up)
+	    _queue->charge(UP);
+	  else if (_event->key.code == sf::Keyboard::Down)
+	    _queue->charge(DOWN);
+	  else if (_event->key.code == sf::Keyboard::Space)
+	    fireing = true;
 	}
       else if (_event->type == sf::Event::MouseMoved)
+	//_queue->rotate(_whiteBall->pos(), _event->mouseMove);
 	_queue->setPos(_event->mouseMove);
+      /*if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+	charging = true;
+	else
+	charging = false;
+	}
+	if (charging == true)
+	_queue->charge(_event->mouseButton);*/
+      fireing = _queue->fire(fireing);
     }
 }

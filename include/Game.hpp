@@ -5,7 +5,7 @@
 // Login   <tiphaine.laurent@epitech.eu>
 // 
 // Started on  Tue Jul 11 17:45:07 2017 Tiphaine
-// Last update Thu Jul 13 17:57:38 2017 Tiphaine
+// Last update Wed Jul 19 13:22:53 2017 Tiphaine
 //
 
 #ifndef GAME_HPP
@@ -44,6 +44,8 @@ private:
   sf::Event		*_event;
   sf::Texture		*_tableTexture;
   sf::Sprite		*_tableSprite;
+  sf::Font		*_font;
+  sf::Text		*_text;
   std::vector<Ball*>	_yellowBalls;
   std::vector<Ball*>	_redBalls;
   WhiteBall		*_whiteBall;

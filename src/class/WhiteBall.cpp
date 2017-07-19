@@ -5,7 +5,7 @@
 // Login   <tiphaine.laurent@epitech.eu>
 // 
 // Started on  Thu Jul 13 10:57:35 2017 Tiphaine
-// Last update Thu Jul 13 13:36:22 2017 Tiphaine
+// Last update Wed Jul 19 11:06:44 2017 Tiphaine
 //
 
 #include "const.hpp"
@@ -34,7 +34,7 @@ WhiteBall::~WhiteBall()
 
 bool			WhiteBall::reset()
 {
-  setPos(BW_DEFAULT_POS_X, BW_DEFAULT_POS_Y);
+  setPos(BW_DEFAULT_POS);
   setSpeed(SPEED_MIN, SPEED_MIN);
   return true;
 }

@@ -5,13 +5,14 @@
 // Login   <tiphaine.laurent@epitech.eu>
 // 
 // Started on  Thu Jul 13 17:29:58 2017 Tiphaine
-// Last update Thu Jul 13 18:18:04 2017 Tiphaine
+// Last update Wed Jul 19 14:39:22 2017 Tiphaine
 //
 
 #ifndef QUEUE_HPP_
 # define QUEUE_HPP_
 
 # include <SFML/Graphics.hpp>
+# include "const.hpp"
 
 class			Queue
 {
@@ -21,9 +22,14 @@ public:
 
 public:
   sf::Sprite		&sprite(void) const;
-  bool			setPos(const sf::Event::MouseMoveEvent&);
+  sf::Vector2f		pos(void);
+  void			setPos(const sf::Event::MouseMoveEvent&);
+  float			&power(void);
+  void			charge(t_key);
+  void			rotate(t_key);
+  bool			fire(bool);
+  //void			rotate(const sf::Vector2f &, const sf::Event::MouseMoveEvent &);
   //bool			fire(void);
-  //void			turn(void);
 
 private:
 

@@ -5,7 +5,7 @@
 // Login   <tiphaine.laurent@epitech.eu>
 // 
 // Started on  Wed Jul 12 00:01:33 2017 Tiphaine
-// Last update Thu Jul 13 13:00:35 2017 Tiphaine
+// Last update Wed Jul 19 11:45:46 2017 Tiphaine
 //
 
 #ifndef BALL_HPP_
@@ -20,7 +20,7 @@ public:
   virtual ~Ball();
 
 public:
-  sf::Vector2f		&pos(void) const;
+  sf::Vector2f		pos(void) const;
   bool			setPos(const sf::Vector2f&);
   bool			setPos(float, float);
   sf::Vector2<double>	&speed(void) const;

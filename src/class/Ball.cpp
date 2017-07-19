@@ -5,7 +5,7 @@
 // Login   <tiphaine.laurent@epitech.eu>
 // 
 // Started on  Wed Jul 12 15:15:14 2017 Tiphaine
-// Last update Thu Jul 13 14:44:00 2017 Tiphaine
+// Last update Wed Jul 19 11:46:44 2017 Tiphaine
 //
 
 #include "const.hpp"
@@ -21,9 +21,9 @@ Ball::~Ball()
   delete _speed;
 }
 
-sf::Vector2f		&Ball::pos(void) const
+sf::Vector2f		Ball::pos(void) const
 {
-  return *new sf::Vector2f(_sprite->getPosition());
+  return _sprite->getPosition();
 }
 
 bool			Ball::setPos(const sf::Vector2f &pos)

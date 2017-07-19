@@ -5,7 +5,7 @@
 // Login   <tiphaine.laurent@epitech.eu>
 // 
 // Started on  Thu Jul 13 13:32:15 2017 Tiphaine
-// Last update Thu Jul 13 14:37:25 2017 Tiphaine
+// Last update Wed Jul 19 11:06:34 2017 Tiphaine
 //
 
 #include "const.hpp"
@@ -34,7 +34,7 @@ BlackBall::~BlackBall()
 
 bool			BlackBall::reset()
 {
-  setPos(BB_DEFAULT_POS_X, BB_DEFAULT_POS_Y);
+  setPos(BB_DEFAULT_POS);
   setSpeed(SPEED_MIN, SPEED_MIN);
   return true;
 }
