@@ -5,7 +5,7 @@
 // Login   <tiphaine.laurent@epitech.eu>
 // 
 // Started on  Tue Jul 11 18:00:11 2017 Tiphaine
-// Last update Wed Jul 19 14:31:00 2017 Tiphaine
+// Last update Thu Jul 20 10:32:20 2017 Tiphaine
 //
 
 #ifndef CONST_HPP
@@ -25,7 +25,8 @@
 # define W_RESOLUTION		FULL_HD
 # define W_BPP			32
 # define W_CLEAR		sf::Color(42, 142, 42, 100)//sf::Color::Green
-# define W_FPS_MAX		62
+# define FPS_CALC(fps)		fps == 0 ? fps : fps + 2
+# define W_FPS_MAX		FPS_CALC(60)
 
 /* OBJETS */
 # define RESSOURCE		"ressource/"

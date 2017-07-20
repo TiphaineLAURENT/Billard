@@ -5,7 +5,7 @@
 // Login   <tiphaine.laurent@epitech.eu>
 // 
 // Started on  Thu Jul 13 17:31:27 2017 Tiphaine
-// Last update Wed Jul 19 15:15:30 2017 Tiphaine
+// Last update Thu Jul 20 10:33:13 2017 Tiphaine
 //
 
 #include <cmath>
@@ -93,19 +93,31 @@ void			Queue::rotate(t_key action/*const sf::Vector2f &white,
   return ;
 }
 
-bool			Queue::fire(bool fireing)
+void			Queue::fire(bool &fireing)
 {
   sf::Vector2f		queue(pos());
 
-  std::cout << _power << std::endl;
   if (fireing == true)
     {
-      if (_power == 0)
-	return false;
-      _power -= 5;
-      _power < 0 ? _power = 0 : _power;
-      _sprite->setPosition(queue.x - 5, queue.y);
-      return true;
+      _sprite->setPosition(queue.x - _power, queue.y);
+      _power = 0;
+      fireing = false;
     }
-  return false;
+  /*std::cout << _power << std::endl;
+    if (fireing == true)
+    {
+    if (_power < 1)
+    return false;
+    _power -= 10;
+    if (_power < 0)
+    {
+    _sprite->setPosition(queue.x - (10 + _power), queue.y);
+    _power = 0;
+    }
+    else
+    _sprite->setPosition(queue.x - 10, queue.y);
+    fireing = fire(fireing);
+    return true;
+    }*/
+  return ;
 }

@@ -5,7 +5,7 @@
 // Login   <tiphaine.laurent@epitech.eu>
 // 
 // Started on  Tue Jul 11 17:44:44 2017 Tiphaine
-// Last update Wed Jul 19 15:16:36 2017 Tiphaine
+// Last update Thu Jul 20 10:33:43 2017 Tiphaine
 //
 
 #include "Game.hpp"
@@ -125,6 +125,6 @@ void		Game::checkEvent(void)
 	}
 	if (charging == true)
 	_queue->charge(_event->mouseButton);*/
-      fireing = _queue->fire(fireing);
+      _queue->fire(fireing);
     }
 }
